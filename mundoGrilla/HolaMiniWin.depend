@@ -1,0 +1,71 @@
+# depslib dependency file v1.0
+1475655681 source:c:\users\maria\desktop\mundo\main.cpp
+	"miniwin.h"
+	"grilla.h"
+
+1475655570 
+
+1320942340 c:\users\maria\desktop\mundo\miniwin.h
+	<iostream>
+
+1320942340 source:c:\users\maria\desktop\mundo\miniwin.cpp
+	<fstream>
+	<sstream>
+	<queue>
+	<math.h>
+	<process.h>
+	<windows.h>
+	<windowsx.h>
+	"miniwin.h"
+	<cstdio>
+	<cstdlib>
+	<iostream>
+	<string>
+	<queue>
+	<X11/Xlib.h>
+	<X11/Xutil.h>
+	<X11/Xos.h>
+	<X11/Xatom.h>
+	<X11/keysym.h>
+	"miniwin.h"
+
+1320942340 "
+
+1475655570 c:\users\maria\desktop\mundo\grilla.h
+	<iostream>
+	<stdlib.h>
+	<sstream>
+
+1320942340 source:/home/dell/Escritorio/mundo/miniwin.cpp
+	<fstream>
+	<sstream>
+	<queue>
+	<math.h>
+	<process.h>
+	<windows.h>
+	<windowsx.h>
+	"miniwin.h"
+	<cstdio>
+	<cstdlib>
+	<iostream>
+	<string>
+	<queue>
+	<X11/Xlib.h>
+	<X11/Xutil.h>
+	<X11/Xos.h>
+	<X11/Xatom.h>
+	<X11/keysym.h>
+	"miniwin.h"
+
+1320942340 /home/dell/Escritorio/mundo/miniwin.h
+	<iostream>
+
+1475675298 source:/home/dell/Escritorio/mundo/main.cpp
+	"miniwin.h"
+	"grilla.h"
+
+1475655572 /home/dell/Escritorio/mundo/grilla.h
+	<iostream>
+	<stdlib.h>
+	<sstream>
+

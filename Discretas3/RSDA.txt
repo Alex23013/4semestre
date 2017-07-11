@@ -1,0 +1,10 @@
+  RSA (int k_pub, int N){//constructor del emisor
+        this->clave_pub= k_pub;
+        this->N=N;
+        }
+
+/*
+int RSA::com()
+{
+
+}*/

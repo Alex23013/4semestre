@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1463101353 source:c:\users\maria\desktop\ex_01_ntl\main.cpp
+	<iostream>
+	<NTL/ZZ.h>
+	<time.h>
+	<bitset>
+
+1463101354 source:f:\para\ex_01_ntl\main.cpp
+	<iostream>
+	<NTL/ZZ.h>
+	<time.h>
+	<bitset>
+

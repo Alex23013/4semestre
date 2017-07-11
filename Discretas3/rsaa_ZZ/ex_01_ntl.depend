@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1463101353 source:c:\users\maria\desktop\ex_01_ntl\main.cpp
+	<iostream>
+	<NTL/ZZ.h>
+	<time.h>
+	<bitset>
+
+1463101354 source:f:\para\ex_01_ntl\main.cpp
+	<iostream>
+	<NTL/ZZ.h>
+	<time.h>
+	<bitset>
+
+1463178660 source:f:\para\rsaa\main.cpp
+	<iostream>
+	<NTL/ZZ.h>
+	<time.h>
+	<fstream>
+	"RSA.h"
+
+1463178804 f:\para\rsaa\rsa.h
+	<iostream>
+	<NTL/ZZ.h>
+	"funciones_RSA.h"
+
+1463179170 f:\para\rsaa\funciones_rsa.h
+	<iostream>
+	<cstdlib>
+	<NTL/ZZ.h>
+	<ctime>
+
