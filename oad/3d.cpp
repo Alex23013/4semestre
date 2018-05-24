@@ -41,10 +41,6 @@ public:
 	    }
 
     void print_tablero(){
-	//cout<<"\nternas: "<<ternas[0][0]<<endl;
-	//cout<<"\nternas: "<<ternas[0][1]<<endl;
-	//cout<<"\nternas: "<<ternas[0][2]<<endl;
-	//if("111"==ternas[0][1]){cout<<"\yes\n";}else{cout<<"NO\n";}
        
         int i,j,k;
         for(i=0;i<3;i++){
@@ -62,7 +58,7 @@ public:
 
 	void print_cara(int a){
 	int j,k;
-	cout<<"1   2   3 \n";
+	cout<<" 1   2   3 \n";
 	for(j=0;j<3;j++){
 		if(j>0)cout<<j+1<<" ";
 		else{cout<<"  ";}
@@ -77,14 +73,13 @@ public:
 
 
     void poner_ficha(int x,int y, int z, char ficha){
-           // tablero[x][y][z]=ficha;
 		if(*(*(*(tablero+x)+y)+z)==' '){
 			*(*(*(tablero+x)+y)+z)=ficha;}
 		else{
 		cout<<"Ya esta ocupado este casillero\n intenta con otro casillero\n";jugar(ficha);}
    	 }
 	
-	void jugar(char ficha){
+	bool jugar(char ficha){
 		cout<<"Es el turno de : "<<ficha;
 		int x,y,z;
 		cout<<" Elija una capa \n";
@@ -95,8 +90,8 @@ public:
 		cin>>z;
 		poner_ficha(x-1,y-1,z-1,ficha);
 		print_tablero();
-		if(win(ficha,x-1,y-1,z-1) == true){cout<<" jugador: "<<ficha<<" gano\n";}
-		else{cout<<"Sigamos jugando\n";}
+		if(win(ficha,x-1,y-1,z-1) == true){cout<<" jugador: "<<ficha<<" ganó\n";return true;}
+		else{cout<<"Sigamos jugando\n";return false;}
 	}
 
 	bool win(char ficha,int x,int y, int z){
@@ -105,13 +100,52 @@ public:
 				
 				if(*(*(*(ternas+i)+j)+0)==x && *(*(*(ternas+i)+j)+1)==y &&*(*(*(ternas+i)+j)+2)==z)			
 				{
-					cout<<"*(*(*(ternas+i)+j)+0): "<<*(*(*(ternas+i)+j)+0)<<" x "<<x<<endl;
-					cout<<"*(*(*(ternas+i)+j)+1): "<<*(*(*(ternas+i)+j)+1)<<" y "<<y<<endl;
-					cout<<"*(*(*(ternas+i)+j)+2): "<<*(*(*(ternas+i)+j)+2)<<" z "<<z<<endl;
-					if(j==0 && *(*(*(tablero+i)+j)+1)==ficha && *(*(*(tablero+i)+j)+2)==ficha){return true;}
-					cout<<"j: "<<j<<"  "<<*(*(*(tablero+i)+j)+1)<<" == "<<ficha;
-					if(j==1 && *(*(*(tablero+i)+j)+0)==ficha && *(*(*(tablero+i)+j)+2)==ficha){return true;}
-					if(j==2 && *(*(*(tablero+i)+j)+0)==ficha && *(*(*(tablero+i)+j)+1)==ficha){return true;}
+				
+				
+					cout <<"terna a evaluar "<<i<<":\t";
+					
+					if(j==0 ){
+					cout<<"es 0 elem ter ";
+					int xx =ternas[i][1][0];
+				  int yy =ternas[i][1][1];
+				  int zz =ternas[i][1][2];
+				  cout<<" 1elTer:  "<<xx<<","<<yy<<","<<zz<<"}\t";
+				  int xxx =ternas[i][2][0];
+				  int yyy =ternas[i][2][1];
+				  int zzz =ternas[i][2][2];
+				  cout<<" 2elTer:   "<<xxx<<","<<yyy<<","<<zzz<<"}\n";
+				  			  
+				  if(tablero[xx][yy][zz]== ficha && tablero[xxx][yyy][zzz]== ficha ){return true;}
+          }
+					
+					if(j==1){
+					cout<<"es 1 elem ter ";
+					int xx =ternas[i][0][0];
+				  int yy =ternas[i][0][1];
+				  int zz =ternas[i][0][2];
+				  cout<<" 0elTer:  "<<xx<<","<<yy<<","<<zz<<"}\t";
+				  int xxx =ternas[i][2][0];
+				  int yyy =ternas[i][2][1];
+				  int zzz =ternas[i][2][2];
+				  cout<<" 2elTer:   "<<xxx<<","<<yyy<<","<<zzz<<"}\n";
+				  			  
+				  if(tablero[xx][yy][zz]== ficha && tablero[xxx][yyy][zzz]== ficha ){return true;}
+					}
+					
+					if(j==2){
+					cout<<"es 2 elem ter ";
+					int xx =ternas[i][1][0];
+				  int yy =ternas[i][1][1];
+				  int zz =ternas[i][1][2];
+				  cout<<" 1elTer:  "<<xx<<","<<yy<<","<<zz<<"}\t";
+				  int xxx =ternas[i][0][0];
+				  int yyy =ternas[i][0][1];
+				  int zzz =ternas[i][0][2];
+				  cout<<" 0elTer:   "<<xxx<<","<<yyy<<","<<zzz<<"}\n";
+				  			  
+				  if(tablero[xx][yy][zz]== ficha && tablero[xxx][yyy][zzz]== ficha ){return true;}
+					}
+					
 				}
 			}
 		}
@@ -129,13 +163,15 @@ int main(){
 	int clock =0;
 	A.print_tablero();
 	
-	
-	while(clock<27){
+	bool flagAlguienGana = false;
+    
+  	
+	while(!flagAlguienGana && clock <27){
 	char jug;
 	if((clock&1)==0){jug=jug_2;}else{jug=jug_1;}
-	A.jugar(jug);
+	flagAlguienGana =A.jugar(jug);
 	clock++;
 	}
-	cout<<"NADIE gano XD \n";
+	if(!flagAlguienGana) {cout<<"NADIE ganó XD \n";}
 	return 0;
 }
